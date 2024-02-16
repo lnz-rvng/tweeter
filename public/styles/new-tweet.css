@@ -1,0 +1,39 @@
+.new-tweet {
+  width: 90%;
+  margin: 1em auto;
+}
+
+textarea {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
+  overflow: hidden;
+  resize: none;
+  border: none;
+  background-color: inherit;
+  border-bottom: 3px solid #312e2ebf;
+  width: 100%;
+  margin-bottom: 4px;
+  height: 40px;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.under {
+  font-family: "Bungee", sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet-submit {
+  background-color: rgb(9, 9, 119);
+  color: white;
+  border: none;
+  padding: 5px;
+}
+
+.tweet-submit:hover {
+  background-color: rgba(14, 14, 155, 0.832);
+}
+
