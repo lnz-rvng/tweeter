@@ -6,7 +6,6 @@
 textarea {
   font-family: "Source Sans 3", sans-serif;
   font-weight: 600;
-  overflow: hidden;
   resize: none;
   border: none;
   background-color: inherit;
@@ -20,7 +19,7 @@ textarea:focus {
   outline: none;
 }
 
-.under {
+.footer {
   font-family: "Bungee", sans-serif;
   display: flex;
   justify-content: space-between;
