@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $('#tweet-text').on('input', function() {
     var maxLength = 140;
     var length = $(this).val().length;
