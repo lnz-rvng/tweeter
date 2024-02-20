@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/user-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -31,14 +32,14 @@
   <body>
     <!-- NAVIGATION -->
     <nav>
-      <span class="logo">tweeter</span>
-      <div class="right">
+      <span>tweeter</span>
+      <div class="write-tweet">
         <p><strong>Write</strong> a new tweet</p>
         <i class="fa-solid fa-angles-down" style="color: #ff0000;"></i>
       </div>
     </nav>
     <!-- HEADER -->
-    <header>
+    <header class="header-profile">
       <div class="profile-pic">
         <img src="/images/profile-hex.png" alt="Your profile picture">
       </div>
@@ -48,17 +49,44 @@
     </header>
     <!-- MAIN -->
     <main class="container">
+
+      <!-- THIS IS WHERE WE TWEET STUFF -->
       <section class="new-tweet">
         <form action="/tweets" method="post">
           <label for="tweet-text"></label>
-          <div class="line"></div>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="under">
+          <div class="footer">
             <button type="submit" class="tweet-submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
+
+      <!-- THIS IS WHERE WE SEE THE TWEETS -->
+      <article>
+        <header class="header-tweets">
+          <div class="header-tweets-profile">
+            <img src="https://i.imgur.com/73hZDYK.png" alt="A profile picture of a user" class="user-profile-pic">
+            <h3 class="user-name">Newton</h3>
+          </div>
+          <h3 class="user-tag">@SirIsaac</h3>
+        </header>
+
+        <div class="tweets">
+          <p class="user-tweet">If I have seen further it is by standing on the shoulders of giants</p>
+          <div class="hr-line"></div>
+        </div>
+
+        <footer>
+          <h5>10 days ago</h5>
+          <ul>
+            <li><i class="fa-solid fa-flag"></i></i></li>
+            <li><i class="fa-sharp fa-solid fa-retweet"></i></li>
+            <li><i class="fa-solid fa-heart"></i></li>
+          </ul>
+        </footer>
+      </article>
+
     </main>
   </body>
 </html>
