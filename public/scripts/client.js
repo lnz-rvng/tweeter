@@ -78,6 +78,9 @@ const createTweetElement = (tweet) => {
 // Dynamic rendering
 const renderTweets = (tweets) => {
 
+  // Empty out the #tweet-container whenever the renderTweets function is called
+  $("#tweet-container").empty();
+
   // Loop over the array of tweet objects
   for (const tweet of tweets) {
     const $tweet = createTweetElement(tweet);
@@ -87,5 +90,5 @@ const renderTweets = (tweets) => {
   }
 }
 
-  renderTweets(data);
+renderTweets(data);
 })
