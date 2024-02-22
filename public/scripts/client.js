@@ -5,48 +5,10 @@
  */
 
 $(document).ready(() => {
+  // Dynamically create tweets
+  const createTweetElement = (tweet) => {
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  },
-  {
-    "user": {
-      "name": "Lance",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@LIM"
-    },
-    "content": {
-      "text": "GOD DID!"
-    },
-    "created_at": 1461113952088
-  }
-]
-
-// Dynamically create tweets
-const createTweetElement = (tweet) => {
-
-  const $tweet = `
+    const $tweet = `
     <article>
     <header class="header-tweets">
       <div class="header-tweets-profile">
@@ -72,23 +34,74 @@ const createTweetElement = (tweet) => {
     </article>
   `
 
-  return $tweet;
-}
-
-// Dynamic rendering
-const renderTweets = (tweets) => {
-
-  // Empty out the #tweet-container whenever the renderTweets function is called
-  $("#tweet-container").empty();
-
-  // Loop over the array of tweet objects
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
-
-    // Append tweet structure created to the #tweet-container
-    $("#tweet-container").append($tweet);
+    return $tweet;
   }
-}
 
-renderTweets(data);
+  // Dynamic rendering
+  const renderTweets = (tweets) => {
+
+    // Empty out the #tweet-container whenever the renderTweets function is called
+    $("#tweet-container").empty();
+
+    // Loop over the array of tweet objects
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+
+      // Append the tweet structure created on top of the #tweet-container
+      $("#tweet-container").prepend($tweet);
+    }
+  }
+
+  const charCounter = function () {
+    const maxLength = 140;
+    const length = $(this).val().length;
+    const remainingChar = maxLength - length;
+
+    $('.counter').html(remainingChar);
+
+    if (remainingChar < 0) {
+     $('.counter').css('color', 'red')
+    }
+
+    if (remainingChar > 0) {
+      $('.counter').css('color', '#312e2ebf')
+    }
+  }
+
+  const $form = $("form")
+
+  $('#tweet-text').on('input', charCounter);
+
+  $form.on("submit", (event) => {
+
+    // Prevents the default form submission
+    event.preventDefault();
+    const formData = $form.serialize();
+
+    // Makes a POST request 
+    $.ajax({
+      url: "http://localhost:8080/tweets",
+      method: "POST",
+      data: formData,
+      success: () => {
+        loadTweets();
+      }
+    })
+
+    $("#tweet-text").val('');
+    $(".counter").html('140').css('color', '#312e2ebf')
+  })
+
+  // Fetch the tweets using AJAX
+  const loadTweets = () => {
+    $.ajax({
+      url: "http://localhost:8080/tweets",
+      method: "GET",
+      success: (response) => {
+        renderTweets(response)
+      }
+    })
+  }
+
+  loadTweets();
 })
