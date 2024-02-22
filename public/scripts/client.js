@@ -37,7 +37,7 @@ const data = [
       "handle": "@LIM"
     },
     "content": {
-      "text": "Tell 'em to bring the whole ocean"
+      "text": "GOD DID!"
     },
     "created_at": 1461113952088
   }
