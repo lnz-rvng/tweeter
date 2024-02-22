@@ -5,9 +5,18 @@
  */
 
 $(document).ready(() => {
-  // Dynamically create tweets
-  const createTweetElement = (tweet) => {
 
+  // An escape function used to prevent XSS
+  const createTweetElement = (tweet) => {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+
+    const safeHTML = `${escape(tweet.content.text)}`;
+
+  // Dynamically create tweets
     const $tweet = `
     <article>
     <header class="header-tweets">
@@ -19,12 +28,12 @@ $(document).ready(() => {
     </header>
 
     <div class="tweets">
-      <p class="user-tweet">${tweet.content.text}</p>
+      <p class="user-tweet">${safeHTML}</p>
       <div class="hr-line"></div>
     </div>
 
     <footer>
-      <h5>${timeago.format(new Date(tweet.created_at))}</h5>
+      <h5>${timeago.format(tweet.created_at)}</h5>
       <ul>
         <li><i class="fa-solid fa-flag"></i></i></li>
         <li><i class="fa-sharp fa-solid fa-retweet"></i></li>
@@ -80,7 +89,7 @@ $(document).ready(() => {
     });
 
     $("#tweet-text").val('');
-    $(".counter").html('140').css('color', '#312e2ebf');
+    $(".counter").text('140').css('color', '#312e2ebf');
   });
 
   // Fetch the tweets using AJAX
