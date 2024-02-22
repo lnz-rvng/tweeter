@@ -5,7 +5,7 @@ $(document).ready(() => {
     const length = $(this).val().trim().length;
     const remainingChar = maxLength - length;
 
-    $('.counter').html(remainingChar);
+    $('.counter').text(remainingChar);
 
     $('.counter').css('color', remainingChar < 0 ? 'red' : '#312e2ebf');
   };
