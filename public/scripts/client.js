@@ -57,8 +57,18 @@ $(document).ready(() => {
 
     // Prevents the default form submission
     event.preventDefault();
-    const formData = $form.serialize();
 
+    const tweetContent = $("#tweet-text").val().trim();
+
+    if (!tweetContent) {
+      return alert("tweet something");
+    }
+
+    if (tweetContent.length > 140) {
+      return alert("Exceeded the limit of 140 characters");
+    }
+
+    const formData = $form.serialize();
     // Makes a POST request
     $.ajax({
       url: "http://localhost:8080/tweets",
