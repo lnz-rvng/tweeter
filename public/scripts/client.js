@@ -24,7 +24,7 @@ $(document).ready(() => {
     </div>
 
     <footer>
-      <h5>${tweet.created_at}</h5>
+      <h5>${timeago.format(new Date(tweet.created_at))}</h5>
       <ul>
         <li><i class="fa-solid fa-flag"></i></i></li>
         <li><i class="fa-sharp fa-solid fa-retweet"></i></li>
