@@ -1,8 +1,9 @@
 $(document).ready(() => {
-  $('#tweet-text').on('input', function() {
-    var maxLength = 140;
-    var length = $(this).val().length;
-    var remainingChar = maxLength - length;
+
+  const charCounter = function () {
+    const maxLength = 140;
+    const length = $(this).val().length;
+    const remainingChar = maxLength - length;
 
     $('.counter').html(remainingChar);
 
@@ -10,5 +11,10 @@ $(document).ready(() => {
      $('.counter').css('color', 'red')
     }
 
-  });
+    if (remainingChar > 0) {
+      $('.counter').css('color', '#312e2ebf')
+    }
+  }
+
+  $('#tweet-text').on('input', charCounter);
 });
