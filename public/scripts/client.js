@@ -32,10 +32,10 @@ $(document).ready(() => {
       </ul>
     </footer>
     </article>
-  `
+  `;
 
     return $tweet;
-  }
+  };
 
   // Dynamic rendering
   const renderTweets = (tweets) => {
@@ -50,16 +50,16 @@ $(document).ready(() => {
       // Append the tweet structure created on top of the #tweet-container
       $("#tweet-container").prepend($tweet);
     }
-  }
+  };
 
-  const $form = $("form")
+  const $form = $("form");
   $form.on("submit", (event) => {
 
     // Prevents the default form submission
     event.preventDefault();
     const formData = $form.serialize();
 
-    // Makes a POST request 
+    // Makes a POST request
     $.ajax({
       url: "http://localhost:8080/tweets",
       method: "POST",
@@ -67,11 +67,11 @@ $(document).ready(() => {
       success: () => {
         loadTweets();
       }
-    })
+    });
 
     $("#tweet-text").val('');
-    $(".counter").html('140').css('color', '#312e2ebf')
-  })
+    $(".counter").html('140').css('color', '#312e2ebf');
+  });
 
   // Fetch the tweets using AJAX
   const loadTweets = () => {
@@ -79,10 +79,10 @@ $(document).ready(() => {
       url: "http://localhost:8080/tweets",
       method: "GET",
       success: (response) => {
-        renderTweets(response)
+        renderTweets(response);
       }
-    })
-  }
+    });
+  };
 
   loadTweets();
-})
+});
