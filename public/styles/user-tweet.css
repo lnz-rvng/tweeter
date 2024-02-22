@@ -1,3 +1,8 @@
+#tweet-container {
+  width: 90%;
+  margin: 1em auto;
+}
+
 article {
   border: 2px solid black;
   width: 90%;
@@ -38,6 +43,7 @@ article {
 .tweets p {
   font-size: 1em;
   margin-bottom: 10px;
+  overflow-wrap: break-word;
 }
 
 .hr-line {
