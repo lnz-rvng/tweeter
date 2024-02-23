@@ -70,12 +70,16 @@ $(document).ready(() => {
     const tweetContent = $("#tweet-text").val().trim();
 
     if (!tweetContent) {
-      return alert("tweet something");
+      $(".error-msg2").slideUp("fast");
+      return $(".error-msg1").slideDown("fast");
     }
+    $(".error-msg1").slideUp("fast");
 
     if (tweetContent.length > 140) {
-      return alert("Exceeded the limit of 140 characters");
+      $(".error-msg1").slideUp("fast");
+      return $(".error-msg2").slideDown("fast");
     }
+    $(".error-msg2").slideUp("fast");
 
     const formData = $form.serialize();
     // Makes a POST request
