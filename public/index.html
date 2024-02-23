@@ -53,6 +53,11 @@
 
       <!-- THIS IS WHERE WE TWEET STUFF -->
       <section class="new-tweet">
+        <div class="error-msg">
+          <h3 class="error-msg1">You must write something on the textarea</h3>
+          <h3 class="error-msg2">You exceeded the character limit of 140</h3>
+        </div>
+        
         <form action="/tweets" method="post">
           <label for="tweet-text"></label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
