@@ -3,16 +3,42 @@
   margin: 1em auto;
 }
 
+.error-msg {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+}
+
+.error-msg1 {
+  display: none;
+  border: 2px solid rgb(224, 79, 79);
+  background-color: rgb(248, 149, 149);
+  color: black;
+  margin: 5px auto;
+  padding: 5px;
+}
+
+.error-msg2 {
+  display: none;
+  border: 2px solid rgb(224, 79, 79);
+  background-color: rgb(248, 149, 149);
+  color: black;
+  margin: 5px auto;
+  padding: 5px;
+}
+
 textarea {
   font-family: "Source Sans 3", sans-serif;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 18px;
   resize: none;
   border: none;
   background-color: inherit;
   border-bottom: 3px solid #312e2ebf;
   width: 100%;
   margin-bottom: 4px;
-  height: 40px;
+  height: auto;
+  overflow: hidden;
 }
 
 textarea:focus {
