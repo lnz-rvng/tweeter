@@ -1,6 +1,7 @@
 .new-tweet {
   width: 90%;
   margin: 1em auto;
+  display: none;
 }
 
 .error-msg {
