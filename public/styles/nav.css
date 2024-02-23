@@ -31,3 +31,15 @@ strong:after {
   content: "\00a0";
 }
 
+.angle-dbl-down {
+  background-color: inherit;
+  border: none;
+}
+
+i.fa-solid.fa-angles-down {
+  color: rgba(255, 0, 0, 0.782);
+}
+
+i.fa-solid.fa-angles-down:hover {
+  color: rgba(110, 1, 1, 0.782);
+}
