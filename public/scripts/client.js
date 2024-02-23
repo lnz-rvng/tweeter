@@ -6,6 +6,10 @@
 
 $(document).ready(() => {
 
+  $(".angle-dbl-down").on("click", () => {
+    $(".new-tweet").slideToggle("fast");
+  })
+
   // An escape function used to prevent XSS
   const createTweetElement = (tweet) => {
     const escape = function (str) {
