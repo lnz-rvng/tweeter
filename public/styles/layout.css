@@ -6,21 +6,24 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
  */
- 
+
 body {
   font-family: "Source Sans 3", sans-serif;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
 }
-  
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
@@ -36,5 +39,38 @@ main {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.btn-holder {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 20px;
+  display: none;
+}
+
+.angle-dbl-up {
+  background-color: rgb(255 62 62);
+  height: 70px;
+  width: 70px;
+  border-radius: 50px;
+  border: none;
+  transition: 0.3s;
+}
+
+i {
+  font-size: 30px;
+  transition: 0.3s;
+}
+
+.angle-dbl-up:hover {
+  background-color: rgb(251, 11, 11);
+  height: 75px;
+  width: 75px;
+  opacity: 1;
+}
+
+i:hover {
+  font-size: 37px;
+  color: white;
 }
