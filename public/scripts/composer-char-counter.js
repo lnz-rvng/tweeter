@@ -1,5 +1,6 @@
 $(document).ready(() => {
 
+  // count the remaining character available for the user
   const charCounter = function() {
     const maxLength = 140;
     const length = $(this).val().trim().length;
@@ -12,6 +13,7 @@ $(document).ready(() => {
 
   $('#tweet-text').on('input', charCounter);
 
+  // event handler for scroll on the webpage
   const windowScroll = () => {
     if ($(this).scrollTop()) {
       $("nav").css("backgroundColor", "transparent");
@@ -30,6 +32,7 @@ $(document).ready(() => {
   
   $(window).on('scroll', windowScroll);
 
+  // event handler for clicking the button
   $(".btn-holder").on("click", () => {
     $('html').animate({
       scrollTop: 0
