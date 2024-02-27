@@ -8,6 +8,7 @@ $(document).ready(() => {
 
   $(".angle-dbl-down").on("click", () => {
     $(".new-tweet").slideToggle("fast");
+    $("textarea").trigger("focus");
   })
 
   // An escape function used to prevent XSS
