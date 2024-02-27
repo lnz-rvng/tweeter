@@ -1,0 +1,56 @@
+/* Another smartphone breakpoint is maximum width of around 420px */
+@media only screen and (max-width: 420px) {
+  /* Write smartphone only styles here */
+  nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-profile {
+    height: auto;
+  }
+
+  img {
+    width: 150px;
+  }
+}
+
+/* Another tablet breakpoint is maximum width of 1024px */
+@media only screen and (max-width: 1023px) {
+  /* Write CSS rules that target Tablets screen sizes downwards - including smartphones */
+  nav{
+    background-color: transparent;
+  }
+}
+
+/* Laptops / Desktops: minimum width of 1024px */
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+
+  body {
+    display: flex;
+    font-size: 2em;
+  }
+
+  .header-profile {
+    margin: 180px 3% 0 3%;
+    width: 40%;
+    height: 400px;
+    border-radius: 9px;
+  }
+
+  .profile-pic{
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  .profile-name {
+    margin: auto;
+    margin-bottom: 50px;
+  }
+  main {
+    margin-top: 120px;
+    width: 60%;
+  }
+}
