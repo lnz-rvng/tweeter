@@ -9,11 +9,11 @@ $(document).ready(() => {
   $(".angle-dbl-down").on("click", () => {
     $(".new-tweet").slideToggle("fast");
     $("textarea").trigger("focus");
-  })
+  });
 
   // An escape function used to prevent XSS
   const createTweetElement = (tweet) => {
-    const escape = function (str) {
+    const escape = function(str) {
       let div = document.createElement("div");
       div.appendChild(document.createTextNode(str));
       return div.innerHTML;
@@ -21,7 +21,7 @@ $(document).ready(() => {
 
     const safeHTML = `${escape(tweet.content.text)}`;
 
-  // Dynamically create tweets
+    // Dynamically create tweets
     const $tweet = `
     <article>
     <header class="header-tweets">
