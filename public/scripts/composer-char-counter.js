@@ -17,25 +17,25 @@ $(document).ready(() => {
       $("nav").css("backgroundColor", "transparent");
       $(".write-tweet").css("opacity", "0");
       $(".logo").css("position", "sticky");
-      return $(".btn-holder").fadeIn("fast")
+      return $(".btn-holder").fadeIn("fast");
     }
 
     if (!$(this).scrollTop()) {
       $("nav").fadeIn("fast");
       $(".write-tweet").css("opacity", "1");
       $("nav").css("backgroundColor", "#4056a1");
-      return $(".btn-holder").fadeOut("fast")
+      return $(".btn-holder").fadeOut("fast");
     }
-  }
+  };
   
-  $(window).on('scroll', windowScroll)
+  $(window).on('scroll', windowScroll);
 
   $(".btn-holder").on("click", () => {
     $('html').animate({
       scrollTop: 0
-    }, "fast")
+    }, "fast");
 
     $(".new-tweet").fadeIn("fast");
     $("textarea").trigger("focus");
-  })
+  });
 });
