@@ -12,24 +12,30 @@ $(document).ready(() => {
 
   $('#tweet-text').on('input', charCounter);
 
-  $(window).on('scroll',function() {
-    
+  const windowScroll = () => {
     if ($(this).scrollTop()) {
-      $("nav").css("opacity", "0");
-      return $(".btn-holder").css("display", "inline")
+      $("nav").css("backgroundColor", "transparent");
+      $(".write-tweet").css("opacity", "0");
+      $(".logo").css("position", "sticky");
+      return $(".btn-holder").fadeIn("fast")
     }
 
     if (!$(this).scrollTop()) {
-      $("nav").css("opacity", "1");
-      return $(".btn-holder").css("display", "none")
+      $("nav").fadeIn("fast");
+      $(".write-tweet").css("opacity", "1");
+      $("nav").css("backgroundColor", "#4056a1");
+      return $(".btn-holder").fadeOut("fast")
     }
-  })
+  }
+  
+  $(window).on('scroll', windowScroll)
 
   $(".btn-holder").on("click", () => {
     $('html').animate({
       scrollTop: 0
-    }, "slow")
+    }, "fast")
 
-    $(".new-tweet").fadeIn("slow");
+    $(".new-tweet").fadeIn("fast");
+    $("textarea").trigger("focus");
   })
 });
