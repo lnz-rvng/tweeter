@@ -16,3 +16,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+
+## Screenshots
+
+!["Screenshot of the whole webpage"](https://github.com/lnz-rvng/tweeter/blob/master/docs/my-tweets.png?raw=true)
+
+!["Screenshot of the tweet-box"](https://github.com/lnz-rvng/tweeter/blob/master/docs/char-counter.png?raw=true)
+
+!["Screenshot of the error-message"](https://github.com/lnz-rvng/tweeter/blob/master/docs/tweet-validation.png?raw=true)
