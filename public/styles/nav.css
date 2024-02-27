@@ -42,4 +42,5 @@ i.fa-solid.fa-angles-down {
 
 i.fa-solid.fa-angles-down:hover {
   color: rgba(110, 1, 1, 0.782);
+  cursor: pointer;
 }
